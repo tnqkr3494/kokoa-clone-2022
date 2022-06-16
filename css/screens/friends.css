@@ -28,3 +28,31 @@
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.5);
 }
+
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* visibility : hidden은 값은 남아있지만 그 값을 없는것처럼 보이는 방법!(밑에 깔려있던 배경을 클릭할 수 있다) */
+
+#splash-screen {
+  background-color: var(--yellow);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+  animation: hideSplashScreen 0.4s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+/* forwards : 애니메이션이 끝났을 경우 마지막 명령을 유지한다.(opacity:0) */

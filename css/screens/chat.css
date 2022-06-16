@@ -40,6 +40,7 @@
 .message-row {
   width: 100%;
   display: flex;
+  margin-bottom: 25px;
 }
 
 .message-row img {
@@ -72,4 +73,97 @@
 .message__author {
   opacity: 0.8;
   font-size: 14px;
+}
+
+.message-row__own {
+  justify-content: flex-end;
+}
+
+.message-row__own .message__buble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+/*
+.message-row__own .message__buble {
+  order: 1;
+}
+
+order : flex children에서만 적용이 가능하다! but 코드가 길어지는 단점이 존재!
+
+.message-row__own .message__time {
+  order: 0;
+}
+
+*/
+
+.message-row__own .message__info {
+  flex-direction: row-reverse;
+}
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.reply i {
+  opacity: 0.5;
+}
+
+.reply .reply__column:first-child {
+  width: 8%;
+}
+
+.reply .reply__column:last-child {
+  width: 92%;
+  position: relative;
+}
+
+.reply input {
+  padding: 5px;
+  height: 30px;
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 20px;
+}
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: -3px;
+  top: 5px;
+}
+
+/* > : direct아이콘을 사용해서 버튼아이콘(네모난)까지 건드리지 않도록 한다!*/
+
+.reply__column:last-child > i {
+  right: 40px;
+  top: 21px;
+}
+
+.reply__column button {
+  background-color: var(--yellow);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.reply__column button i {
+  opacity: 1;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
 }
