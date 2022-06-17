@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 500vh;
 }
 
 #chat-screen .alt-header,
@@ -21,11 +21,23 @@
   z-index: 2;
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
   display: flex;
   flex-direction: column;
-  margin-top: 135px;
+  margin-top: 170px;
   align-items: center;
+  animation: fadeIn 0.8s linear;
 }
 
 .chat__timestamp {
@@ -114,6 +126,7 @@ order : flex children에서만 적용이 가능하다! but 코드가 길어지�
   padding: 5px 25px;
   align-items: center;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply i {
@@ -121,11 +134,11 @@ order : flex children에서만 적용이 가능하다! but 코드가 길어지�
 }
 
 .reply .reply__column:first-child {
-  width: 8%;
+  width: 10%;
 }
 
 .reply .reply__column:last-child {
-  width: 92%;
+  width: 90%;
   position: relative;
 }
 
@@ -135,6 +148,7 @@ order : flex children에서만 적용이 가능하다! but 코드가 길어지�
   width: 100%;
   border: var(--main-border);
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
@@ -166,4 +180,27 @@ order : flex children에서만 적용이 가능하다! but 코드가 길어지�
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 90vw;
+  transform: translateX(-10%) translateY(-80px);
+}
+
+/* focus-within : reply내부에 어떤 element가 focus되어 있으면 */
+
+.reply:focus-within {
+  transform: translateY(80px);
 }

@@ -101,3 +101,26 @@
 .open-post__heart-count span {
   margin-left: 3px;
 }
+
+@keyframes heartBeat {
+  0% {
+    color: white;
+    transform: none;
+  }
+  50% {
+    color: tomato;
+    transform: scale(1.5);
+  }
+  100% {
+    color: white;
+    transform: none;
+  }
+}
+
+.open-post__heart-count:hover i {
+  will-change: transform;
+  animation: heartBeat 1s linear infinite;
+}
+
+/* will-change : 브라우저에게 어떤 바뀌는 동작이 일어날 것이라는 언지를 주는 것! 
+=> 애니메이션을 사용할 때 흔들리는 현상을 줄여주고, 더 잘 동작될 수 있게 도와준다.*/
