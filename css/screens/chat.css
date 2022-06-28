@@ -148,7 +148,7 @@ order : flex children에서만 적용이 가능하다! but 코드가 길어지�
   width: 100%;
   border: var(--main-border);
   border-radius: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
